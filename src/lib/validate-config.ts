@@ -19,6 +19,12 @@ import type { Product, Category } from './products';
 // (/products/p/<slug>/); a Category slug of "p" would collide with it.
 const DETAIL_ROUTE_SEGMENT = 'p';
 
+// ASIN format: "B0" followed by 8 uppercase alphanumeric characters
+// (10 characters total) — the Amazon listing identifier used as the join
+// key for maintenance flows. Optional per product; checked only when
+// present.
+const ASIN_PATTERN = /^B0[A-Z0-9]{8}$/;
+
 /**
  * Validate the committed Product Config and Category Config. Throws an
  * Error naming the offending product or category when:
@@ -27,7 +33,9 @@ const DETAIL_ROUTE_SEGMENT = 'p';
  * - a Product has no category, or references a category slug that Category
  *   Config does not define;
  * - a Category slug collides with the reserved detail-route segment;
- * - a Product declares `bullets` that is not an array of non-empty strings.
+ * - a Product declares `bullets` that is not an array of non-empty strings;
+ * - a Product declares an `asin` that does not match the 10-character ASIN
+ *   pattern (B0 + 8 uppercase alphanumerics).
  * A missing price key is *not* an error: the Price Strategy is two-state
  * and an absent key means "Contact for price", same as null (ADR-0004).
  */
@@ -72,6 +80,11 @@ export function validateProductConfig(): void {
     ) {
       problems.push(
         `Product '${product.name}' declares bullets that is not an array of non-empty strings.`,
+      );
+    }
+    if (product.asin !== undefined && !ASIN_PATTERN.test(product.asin)) {
+      problems.push(
+        `Product '${product.name}' declares asin "${product.asin}", which does not match the ASIN pattern (B0 followed by 8 uppercase alphanumerics).`,
       );
     }
   }

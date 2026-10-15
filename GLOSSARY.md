@@ -33,6 +33,10 @@ _Avoid_: Attribute, parameter, feature
 商品详情页上以列表呈现的卖点文案，逐字来自对应 Amazon listing 的五点描述（不做翻译、不做改写）。仅在详情页渲染，商品卡片不展示；可选字段，缺省则不渲染列表。
 _Avoid_: Features, highlights, key points（feature 与 Spec 的 _Avoid_ 词冲突，需保持区分）
 
+**ASIN**:
+Amazon listing 的唯一标识符（10 位，B0 开头）。记录在 Product Config 中，作为把本站 Product 关联到其 Amazon 源 listing 的维护关联键——"按 ASIN 查找并更新商品"的依据。仅用于维护，任何页面不渲染。
+_Avoid_: Amazon ID, listing ID, SKU（SKU 暗示库存管理，本站没有）
+
 ### 询盘
 
 **Inquiry（询盘）**:
@@ -46,7 +50,7 @@ _Avoid_: Product context, auto-fill
 ### 内容配置
 
 **Product Config（商品配置）**:
-仓库 `src/content/` 下定义全部商品（名称、分类、价格策略、MOQ、图片、描述、五点描述、Specs）的 JSON 文件。文件内的排列顺序即页面展示顺序，修改它并 push 即完成商品更新，这是"前端配置"的唯一入口。构建时校验：商品缺图或缺分类直接构建失败。
+仓库 `src/content/` 下定义全部商品（名称、ASIN、分类、价格策略、MOQ、图片、描述、五点描述、Specs）的 JSON 文件。文件内的排列顺序即页面展示顺序，修改它并 push 即完成商品更新，这是"前端配置"的唯一入口。构建时校验：商品缺图或缺分类直接构建失败。
 _Avoid_: Database, CMS
 
 **Site Config（站点配置）**:
