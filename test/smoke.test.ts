@@ -43,6 +43,7 @@ const routes: Record<string, string[]> = {
   'products/p/plant-stake-arms-60-pcs/index.html': ['60PCS Plant Stake Arms', 'Send Inquiry'],
   'about/index.html': ['About Caonysh'],
   'contact/index.html': ['Contact Us', 'inquiry-form'],
+  'privacy/index.html': ['Privacy Policy', "Shenzhen Kaxi'an Industry and Trade Co., Ltd."],
 };
 
 describe('whole-site smoke (built HTML seam)', () => {

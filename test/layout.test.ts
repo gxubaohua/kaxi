@@ -10,7 +10,8 @@ import { SITE_BASE } from './site-base';
 const home = readBuiltPage('index.html');
 const products = readBuiltPage('products/index.html');
 const about = readBuiltPage('about/index.html');
-const pages: Record<string, string> = { home, products, about };
+const privacy = readBuiltPage('privacy/index.html');
+const pages: Record<string, string> = { home, products, about, privacy };
 
 describe('site-wide layout shell (built HTML seam)', () => {
   for (const [pageName, html] of Object.entries(pages)) {

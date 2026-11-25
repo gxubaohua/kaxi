@@ -1,0 +1,162 @@
+---
+// Privacy page: the public Privacy Policy for the caonysh Amazon Ads
+// integration. Amazon requires a publicly reachable privacy policy URL for
+// its Advertising API application review, so this page is plain static legal
+// copy — no Product/Category Config involvement, no runtime data.
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy | Caonysh"
+  description="Privacy Policy for the caonysh Amazon Ads integration: what advertising data we access via Login with Amazon, how we use it, how we protect it, and how to revoke access."
+>
+  <section class="privacy">
+    <h1>Privacy Policy for caonysh Amazon Ads Integration</h1>
+    <p class="privacy-meta">
+      <strong>Effective Date:</strong> November 25, 2026<br />
+      <strong>Last Updated:</strong> November 25, 2026
+    </p>
+
+    <h2 id="introduction">1. Introduction</h2>
+    <p>
+      Shenzhen Kaxi'an Industry and Trade Co., Ltd. ("we", "our", or "us"), operating under the
+      brand <strong>caonysh</strong>, respects your privacy and is committed to protecting the data
+      accessed through our internal Amazon Advertising API application ("the Application"). This
+      Privacy Policy describes how we collect, use, store, and safeguard information obtained via
+      Login with Amazon (LWA) and the Amazon Ads API.
+    </p>
+
+    <h2 id="scope">2. Scope and Purpose of the Application</h2>
+    <p>
+      The Application is developed and operated by Shenzhen Kaxi'an Industry and Trade Co., Ltd.
+      solely for internal business operations, including managing, optimizing, and analyzing
+      advertising campaigns for our own brand (<strong>caonysh</strong>) on Amazon marketplaces. We
+      do not offer this Application as a public third-party SaaS service, nor do we collect data
+      from unaffiliated Amazon sellers.
+    </p>
+
+    <h2 id="information-we-collect">3. Information We Collect</h2>
+    <p>
+      When authorized via Login with Amazon (LWA), the Application accesses only the
+      advertising-related data strictly necessary for campaign management and performance
+      reporting, including:
+    </p>
+    <ul>
+      <li>
+        <strong>Account &amp; Profile Identifiers:</strong> Amazon Advertising Profile IDs,
+        marketplace identifiers, and entity names.
+      </li>
+      <li>
+        <strong>Campaign Configurations:</strong> Campaign settings, ad groups, product ads,
+        keywords, negative keywords, targets, and bidding strategies.
+      </li>
+      <li>
+        <strong>Advertising Performance Metrics:</strong> Aggregated statistical reports such as
+        impressions, clicks, click-through rates (CTR), ad spend, attributed sales, and Advertising
+        Cost of Sales (ACOS).
+      </li>
+      <li>
+        <strong>Authentication Credentials:</strong> OAuth 2.0 Access Tokens and Refresh Tokens
+        required to maintain authorized API connectivity.
+      </li>
+    </ul>
+    <p>
+      We do not collect, store, or process any personally identifiable information (PII) of Amazon
+      retail customers (such as buyer names, shipping addresses, phone numbers, or payment
+      details).
+    </p>
+
+    <h2 id="how-we-use">4. How We Use Collected Information</h2>
+    <p>
+      Shenzhen Kaxi'an Industry and Trade Co., Ltd. uses the collected information exclusively for:
+    </p>
+    <ul>
+      <li>Automating and optimizing advertising bids, budgets, and keyword targeting for <strong>caonysh</strong>.</li>
+      <li>Generating internal analytics dashboards and performance reports to evaluate return on ad spend (ROAS).</li>
+      <li>Monitoring campaign health and diagnosing advertising anomalies.</li>
+    </ul>
+    <p>
+      We <strong>do not</strong> sell, rent, lease, trade, or disclose any Amazon Ads API data or
+      OAuth credentials to any external third parties.
+    </p>
+
+    <h2 id="storage-security">5. Data Storage, Security, and Retention</h2>
+    <p>
+      We implement industry-standard technical and organizational safeguards to protect all
+      retrieved data:
+    </p>
+    <ul>
+      <li>
+        <strong>Encryption in Transit &amp; at Rest:</strong> All communications with Amazon servers
+        occur exclusively over encrypted HTTPS (TLS) channels. OAuth tokens and sensitive
+        credentials are stored securely with encryption and strict access controls.
+      </li>
+      <li>
+        <strong>Restricted Access:</strong> Access to the Application's database and API credentials
+        is limited strictly to authorized engineering and operations personnel at Shenzhen Kaxi'an
+        Industry and Trade Co., Ltd.
+      </li>
+      <li>
+        <strong>Data Retention:</strong> Advertising metrics and logs are retained only for as long
+        as necessary for internal business analysis and financial reconciliation, after which they
+        are securely deleted or anonymized.
+      </li>
+    </ul>
+
+    <h2 id="revoking-access">6. Revoking Access and Data Deletion</h2>
+    <p>
+      Authorized account administrators may revoke the Application's access at any time directly
+      through the Amazon Advertising Console under account authorization settings. Upon revocation
+      or written request, we will promptly purge all associated OAuth tokens and stored advertising
+      data from our systems.
+    </p>
+
+    <h2 id="updates">7. Updates to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy periodically to reflect operational or regulatory changes.
+      Any revisions will be posted on this page with an updated "Last Updated" date.
+    </p>
+
+    <h2 id="contact">8. Contact Us</h2>
+    <p>
+      If you have any questions regarding this Privacy Policy or our data protection practices,
+      please contact us:
+    </p>
+    <ul class="privacy-contact">
+      <li>
+        <strong>Company Name:</strong> Shenzhen Kaxi'an Industry and Trade Co., Ltd. (深圳市卡喜安工贸有限公司)
+      </li>
+      <li><strong>Brand:</strong> caonysh</li>
+      <li><strong>Email:</strong> <a href="mailto:271744473@qq.com">271744473@qq.com</a></li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .privacy {
+    max-width: 44rem;
+  }
+
+  .privacy h1 {
+    font-size: 2rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .privacy h2 {
+    font-size: 1.25rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .privacy-meta {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+  }
+
+  .privacy ul {
+    padding-left: 1.25rem;
+  }
+
+  .privacy li {
+    margin: 0.35rem 0;
+  }
+</style>
